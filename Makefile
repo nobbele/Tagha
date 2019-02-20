@@ -18,7 +18,7 @@ tagha_asm:
 tagha_libc:
 	$(CC) $(CFLAGS) -c libharbol/stringobj.c libharbol/vector.c libharbol/hashmap.c libharbol/mempool.c libharbol/linkmap.c tagha_libc/tagha_ctype.c tagha_libc/tagha_stdio.c tagha_libc/tagha_stdlib.c tagha_libc/tagha_string.c tagha_libc/tagha_time.c tagha_libc/tagha_module.c -L. -ltagha
 	
-	ar	cr libtagha_libc.a stringobj.o vector.o hashmap.o mempool.o linkmap.o tagha_ctype.o tagha_stdio.o tagha_stdlib.o tagha_string.o  tagha_time.o tagha_module.o
+	ar cr libtagha_libc.a stringobj.o vector.o hashmap.o mempool.o linkmap.o tagha_ctype.o tagha_stdio.o tagha_stdlib.o tagha_string.o  tagha_time.o tagha_module.o
 	
 	$(CC) -shared stringobj.o vector.o hashmap.o mempool.o linkmap.o tagha_ctype.o tagha_stdio.o tagha_stdlib.o tagha_string.o tagha_time.o tagha_module.o -o libtagha_libc.so
 
